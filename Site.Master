@@ -1,0 +1,42 @@
+﻿<%@ Master Language="C#" AutoEventWireup="True" CodeBehind="Site.master.cs" Inherits="Shahab.CensusReport.Site" %>
+
+<%@ Register Src="~/UserControls/TopLinks.ascx" TagPrefix="shahab" TagName="TopLinks" %>
+<%@ Register Src="~/UserControls/Welcome.ascx" TagPrefix="uc" TagName="Welcome" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="/Styles/styles.css" rel="stylesheet" type="text/css" />
+    <script src="/Scripts/jquery-1.11.2.min.js"></script>
+    <script src="/Scripts/function.js"></script>
+</head>
+<body>
+    <form id="frmMain" runat="server">
+        <div class="bodywrapper">
+            <div class="header">
+                <div class="innerTube">
+                    <div class="headerText">
+                    <span>طـــــــرح جامع دریافت خدمات سلامت</span><span style="font-size: 20px">(وزارت بهداشت، درمان و آموزش)</span>
+                    </div>
+                <div class="behdashtLogo">
+                    <img src="/Image/BehdashLogo.jpg" alt="معاونت بهداشت" width="100" />
+                </div>
+                </div>
+            </div>
+            <div class="menuWrapper">
+                <div class="topLinks">
+                    <shahab:TopLinks runat="server" ID="TopLinks" />
+                </div>
+            </div>
+            <div class="welcome">
+                <uc:Welcome runat="server" ID="Welcome" />
+            </div>
+            <div class="mainContent">
+                <asp:ContentPlaceHolder ID="cphMiddle" runat="server" />
+            </div>
+        </div>
+    </form>
+</body>
+</html>
